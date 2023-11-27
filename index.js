@@ -194,6 +194,8 @@ const controller = {
           return alert(`找不到符合關鍵字 ${keyword} 的電影`)
         }
 
+        // 使用搜尋功能 先把頁碼改成起始頁第一頁 否則抓不到資料
+        model.pageNumber = 1
         view.renderPaginator(model.filteredMovies.length)
         if (view.galleryView) {
           view.renderMovieGallery(model.getMoviesByPage())
