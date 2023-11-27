@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- font awesome -->
+  <script src="https://kit.fontawesome.com/3a1a2f2b55.js" crossorigin="anonymous"></script>
+
+  <!-- bootstrap css -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <title>My Movie List</title>
+</head>
+
+<body>
+  <header>
+    <!-- nav bar -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Movie List</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link favorite" href="./favorite.html">Favorite</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <article>
+      <div class="container mt-5">
+        <div class="row align-items-center justify-content-between">
+          <!-- search bar -->
+          <form class="row col-auto row-cols-lg-auto g-3 align-items-center mb-2" id="search-form">
+            <div class="col-auto m-0">
+              <label class="visually-hidden" for="search-input">Search Keyword</label>
+              <input type="text" class="form-control" id="search-input" placeholder="Keyword">
+            </div>
+            <div class="col-auto m-0">
+              <button type="submit" class="btn btn-primary" id="search-submit-button">Search</button>
+            </div>
+          </form>
+
+          <!-- list / gallery view button -->
+
+          <div class="col-auto btn-group toggle-btn" role="group" aria-label="Basic radio toggle button group">
+            <input type="radio" class="btn-check gallery" name="btnradio" id="btnGallery" autocomplete="off" checked>
+            <label class="btn btn-outline-dark gallery" for="btnGallery"><i class="fa fa-th gallery"
+                aria-hidden="true"></i>
+            </label>
+
+            <input type="radio" class="btn-check list" name="btnradio" id="btnList" autocomplete="off">
+            <label class="btn btn-outline-dark list" for="btnList"><i class="fa fa-bars list"
+                aria-hidden="true"></i></label>
+          </div>
+
+
+        </div>
+      </div>
+
+      <div class="row m-4" id="data-panel">
+        <!-- rander movie list -->
+      </div>
+
+      <!-- paginator -->
+      <nav aria-label="Page navigation">
+        <ul class="pagination justify-content-center" id="paginator">
+          <!-- rander paginator -->
+        </ul>
+      </nav>
+
+      <!-- movie modal -->
+      <div class="modal fade" id="movie-modal" tabindex="-1" aria-labelledby="movieModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="movie-modal-title"></h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" id="movie-modal-body">
+              <div class="row">
+                <div class="col-sm-8" id="movie-modal-image"></div>
+                <div class="col-sm-4">
+                  <p><em id="movie-modal-date"></em></p>
+                  <p id="movie-modal-description"></p>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <!-- 引用 axios -->
+  <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+
+  <!-- bootstrap js -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+
+  <!-- my js -->
+  <script src="./index.js"></script>
+</body>
+
+</html>
